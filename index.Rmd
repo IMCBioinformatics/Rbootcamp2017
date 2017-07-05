@@ -37,7 +37,10 @@ At the end of the workshop you will able to:
 * Understand some common R errors and how to deal with them
 * Find and evaluate R packages needed for a particular analysis
 
+<br>
+
 ##Fees
+
 The fee for this course is 250 CAD.
 
 <a href="https://docs.google.com/forms/d/e/1FAIpQLSfmrz4Fwh-pZMIa6NZF_PVNIviJQ-DaRP8cKNGrKsKs_Uo0yg/viewform" class="button button1">Register</a>
