@@ -1,7 +1,7 @@
 
 
 <div class="wrapper">
-<a href="https://docs.google.com/forms/d/e/1FAIpQLSfmrz4Fwh-pZMIa6NZF_PVNIviJQ-DaRP8cKNGrKsKs_Uo0yg/viewform" class="button button1">Register</a>
+<a href="https://wcmcbioinformatics.github.io/Rbootcamp2017/Schedule.html" class="button button1">Schedule</a>
 </div>
 
 <p class="big"> Welcome to the R bootcamp for biologists course website! </p>
