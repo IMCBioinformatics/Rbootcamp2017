@@ -1,4 +1,6 @@
 
+<br>
+
 # Workshop Project 
 
 This project will be completed in the two days of the workshop (August 28-29). We will assign attendess into groups to encourage discussions on approaching each quesstion. Everyone must do their own analysis and submit the final R code.
@@ -17,7 +19,7 @@ Please download the Project data folder from:
 
 https://www.dropbox.com/sh/0iqhknngbugiqcc/AACKnm768SXDeZI708xmn2Qla?dl=0
 
-.You should have two files: TCGA_clinical.csv and TCGA_expression.csv
+.You should have two files: TCGA_clinical.csv and TCGA_expression_sample.csv
 
 ## Questions
 
