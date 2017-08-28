@@ -239,32 +239,83 @@ $(document).ready(function () {
 </div>
 
 
-<p><br> <br></p>
-<p class="medium">
-This course is offered jointly by the <b>Western Canadian Microbiome Centre</b> and <b>Faculty of Veterinary Medicine </b> at the University of Calgary.
-</p>
-<p><br> <br></p>
-<p class="small">
-<p>For Questions and concerns, please contact the instructors:</p>
-<table>
-<thead>
-<tr class="header">
-<th>Dr Hena R. Ramay</th>
-<th>Dr. Matthew Workentine</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><a href="mailto:hena.ramay@ucalgary.ca" target="_top">hena.ramay@ucalgary.ca</a></td>
-<td><a href="mailto:matthew.workentine@ucalgary.ca" target="_top">mathew.workentine@ucaglary.ca</a></td>
-</tr>
-<tr class="even">
-<td><img src="WCMClogo.png" width="100" height="100" /></td>
-<td><br> <img src="UC-vet_med-rgb.jpg" width="200" height="200" /></td>
-</tr>
-</tbody>
-</table>
-</p>
+<div id="workshop-project" class="section level1">
+<h1>Workshop Project</h1>
+<p>This project will be completed in the two days of the workshop (August 28-29). We will assign attendess into groups to encourage discussions on approaching each quesstion. Everyone must do their own analysis and submit the final R code.</p>
+<p><br></p>
+<div id="project-overview" class="section level2">
+<h2>Project Overview</h2>
+<p>We will be working on a small subset of the TCGA Colon cancer dataset. The Cancer Genome Atlas (TCGA), is a collaboration between different research bodies to identify key genomic changes in various cancer types. These datasets are standards for hypothesis testing and validating findings.</p>
+<p>We will be using a subet of the colon RNASeq dataset and clinical data. Following are the questions that we would like you to answer. There is no one way of answering these questions so feel free to use any of the many ways you have learnt to answer each question!</p>
+<p><br></p>
+</div>
+<div id="download-data" class="section level2">
+<h2>Download Data</h2>
+<p>Please download the Project data folder from:</p>
+<p><a href="https://www.dropbox.com/sh/0iqhknngbugiqcc/AACKnm768SXDeZI708xmn2Qla?dl=0" class="uri">https://www.dropbox.com/sh/0iqhknngbugiqcc/AACKnm768SXDeZI708xmn2Qla?dl=0</a></p>
+<p>.You should have two files: TCGA_clinical.csv and TCGA_expression.csv</p>
+</div>
+<div id="questions" class="section level2">
+<h2>Questions</h2>
+<ol style="list-style-type: decimal">
+<li>Read in the two datafiles into R and using one of the built-in R functions look at the file structure i.e. figure out what is in the files.
+<ul>
+<li>Find out how many samples are there in each file.</li>
+<li>Do all the sample names in the clinical and expression file match?</li>
+</ul></li>
+</ol>
+<p><br></p>
+<ol start="2" style="list-style-type: decimal">
+<li>Find out if there is any unnecessary information in the clinical file. Hint: Is there a column which does not provide any information? If so, please remove it from the file.</li>
+</ol>
+<p><br></p>
+<ol start="3" style="list-style-type: decimal">
+<li>For the gene expression data, find out where are the gene ids and assign gene ids as row names. Also remove the gene_id column after assigning the ids to rownames.</li>
+</ol>
+<p><br></p>
+<ol start="4" style="list-style-type: decimal">
+<li>Create a boxplot showing the distribution of the log of read counts for each sample. Make the x-axis lables verticle to the axis. A possible example is as follows:</li>
+</ol>
+<p><img src="Project_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<p><br></p>
+<ol start="5" style="list-style-type: decimal">
+<li>Point out a few characteristics of these boxplots.</li>
+</ol>
+<p><br></p>
+<ol start="6" style="list-style-type: decimal">
+<li>As this expression data is count data, remove all the zeros from the expression matrix. Now, remake the boxplot from question 4.</li>
+</ol>
+<p><br></p>
+<ol start="7" style="list-style-type: decimal">
+<li>Lets make things more exciting! Make a Principle Component Analysis (PCA) plot to see the relationship between samples and color your samples by type.
+<ul>
+<li>We want to do the PCA on samples so samples should be rows in this case. Check if that is the case in your expression matrix. If not modify it.</li>
+<li>What are the things that you have to consider when making a PCA? Do you have to tranform your data (scale or center)? If so how can you do that? Make plots for both transformed and un-transformed data.</li>
+<li>Are the samples separated by type? Are there any subgroups within each subtype?</li>
+<li>Put sample labels on your PCA plot.</li>
+</ul></li>
+</ol>
+<p><br></p>
+<p>Example of one of the possible PCA plots is as follows:</p>
+<p><img src="Project_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p><br></p>
+<ol start="8" style="list-style-type: decimal">
+<li>Usually for gene expression data, we want to see how the gene expression levels have changed in tumor samples compared to normal samples.Let us explore that by calculating log fold change for all genes in these samples.
+<ul>
+<li>Find out the log2fold changes from normal to Tumor samples. Hint: You will first have to calculate the mean for each sample type and then calculate log2FC log2(mean(type1)/mean(type2))</li>
+<li>Find out the top 5 genes where Tumor samples have higher log2FC than normal samples</li>
+<li>Make plots for each gene separately with normal and Tumor sample expression.</li>
+</ul></li>
+</ol>
+<p><br></p>
+<ol start="9" style="list-style-type: decimal">
+<li>You must have noticed by now that normal samples have longer names than the tumor samples. Is there a reason for that?
+<ul>
+<li>Check if we can remove the extra information in the normal sample names i.e. check if the longer names make the samples name unique or is it redundant information and we can get rid of it?</li>
+</ul></li>
+</ol>
+</div>
+</div>
 
 
 
