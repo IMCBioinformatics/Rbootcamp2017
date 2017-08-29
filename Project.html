@@ -285,14 +285,24 @@ $(document).ready(function () {
 </ol>
 <p><br></p>
 <ol start="7" style="list-style-type: decimal">
-<li>Lets make things more exciting! Make a Principle Component Analysis (PCA) plot to see the relationship between samples and color your samples by type.
-<ul>
-<li>We want to do the PCA on samples so samples should be rows in this case. Check if that is the case in your expression matrix. If not modify it.</li>
-<li>What are the things that you have to consider when making a PCA? Do you have to tranform your data (scale or center)? If so how can you do that? Make plots for both transformed and un-transformed data.</li>
-<li>Are the samples separated by type? Are there any subgroups within each subtype?</li>
-<li>Put sample labels on your PCA plot.</li>
-</ul></li>
+<li>Lets make things more exciting! We will make</li>
 </ol>
+<p>Next we will make a Principle Component Analysis (PCA) plot to see the relationship between samples and color the samples by type.</p>
+<p>For those who are not familiar with PCA, it is a dimensionality reduction technique that is widely used in data analysis. Reducing the dimensionality of a dataset can be useful in different ways. For example, our ability to visualize data is limited to 2 or 3 dimensions. Lower dimension can sometimes significantly reduce the computational time of some numerical algorithms. Besides, many statistical models suffer from high correlation between covariates, and PCA can be used to produce linear combinations of the covariates that are uncorrelated between each other.</p>
+<p>There are a few ways in R to perform a PCA analysis. One function which is found in basic R stats package is called <b> prcomp </b>. Take a look at the help for this function and then answer the following questions.</p>
+<pre><code>+ As we want to make the PCA plot for samples,samples should be rows in your input matrix to prcomp. Check if that is the case in your expression matrix. If not modify it. Hint: look at how to transpose the matrix.
+
++  Using the help for prcomp function see what scale and center attributes do? Now look online to find out if your data needs to be centered or scaled.
+
++ Use the prcomp function on your expression matrix (with appropriate attributes) and save the output into an object. Next, explore this object to see what information is stored in this. Try to find out which variable in this object holds the information about principle components(PC) and how many PCs do yo uhave in total
+
++ Once you know which variable holds the information about PCs, save the first two components into a separate object and use them to make the pCA plot in the next step.
+
++ Make the PCA plot for the first two components (as shown in the plot below) for samples and color them using type column in clinical file.
+
++ Are the samples separated by type? Are there any subgroups within each subtype? 
+
++ Put sample labels on your PCA plot.</code></pre>
 <p><br></p>
 <p>Example of one of the possible PCA plots is as follows:</p>
 <p><img src="Project_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
@@ -300,9 +310,9 @@ $(document).ready(function () {
 <ol start="8" style="list-style-type: decimal">
 <li>Usually for gene expression data, we want to see how the gene expression levels have changed in tumor samples compared to normal samples.Let us explore that by calculating log fold change for all genes in these samples.
 <ul>
-<li>Find out the log2fold changes from normal to Tumor samples. Hint: You will first have to calculate the mean for each sample type and then calculate log2FC log2(mean(type1)/mean(type2))</li>
-<li>Find out the top 5 genes where Tumor samples have higher log2FC than normal samples</li>
-<li>Make plots for each gene separately with normal and Tumor sample expression.</li>
+<li><p>Find out the log2fold changes from normal to Tumor samples. Hint: You will first have to calculate the mean for each sample type and then calculate log2FC log2(mean(type1)/mean(type2)+1). Hint: A useful function here can be rowMeans.</p></li>
+<li><p>Find out the gene with the highest log2FC.</p></li>
+<li><p>Make a plot for this gene with normal and Tumor sample expression.</p></li>
 </ul></li>
 </ol>
 <p><br></p>
